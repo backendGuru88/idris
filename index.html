@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massage Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f8d5da; Soft pink background */
+            background-color: #000980;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 700px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .form-header {
+            background-color: #ffff; /* Dark red header */
+            color: #000980;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .form-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #800020;
+            outline: none;
+        }
+
+        .form-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .form-footer button {
+            background-color: #000980;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-footer button:hover {
+            background-color: #590015;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .form-header {
+                font-size: 1.25rem;
+            }
+
+            .form-body {
+                padding: 1rem;
+            }
+
+            .form-footer button {
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">Massage Booking Form</div>
+        <div class="form-body">
+            <form  action="https://formspree.io/f/mnnqzvob"
+            method="POST">
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="full-name">Full Name*</label>
+                    <input type="text" id="full-name" name="full_name" placeholder="First Name Last Name" required>
+                </div>
+                
+                <!-- Contact Number -->
+                <div class="form-group">
+                    <label for="contact-number">Contact Number*</label>
+                    <input type="tel" id="contact-number" name="contact_number" placeholder="(000) 000-0000" required>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                </div>
+
+                <!-- Address -->
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Street Address">
+                    <input type="text" name="city" placeholder="City" style="margin-top: 0.5rem;">
+                    <input type="text" name="state" placeholder="State / Province" style="margin-top: 0.5rem;">
+                </div>
+
+                <!-- Appointment Date -->
+                <div class="form-group">
+                    <label for="appointment-date">When do you want your massage (Date & Time)?*</label>
+                    <textarea id="appointment-date" name="appointment_date" rows="2" placeholder="Enter date and time" required></textarea>
+                </div>
+
+                <!-- Service Duration -->
+                <div class="form-group">
+                    <label for="service-duration">Service Duration (How many hours are you booking for?)*</label>
+                    <input type="number" id="service-duration" name="service_duration" placeholder="Enter hours" required>
+                </div>
+
+                <!-- Amount Paying -->
+                <div class="form-group">
+                    <label for="amount-paying">Amount Paying ($150/hr)*</label>
+                    <input type="text" id="amount-paying" name="amount_paying" placeholder="$">
+                </div>
+
+                <!-- Type of Massage Services -->
+                <div class="form-group">
+                    <label for="massage-type">Type of Massage Services*</label>
+                    <select id="massage-type" name="massage_type" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="swedish">Swedish Massage</option>
+                        <option value="deep_tissue">Deep Tissue Massage</option>
+                        <option value="hot_stone">Hot Stone Massage</option>
+                        <option value="sports">Sports Massage</option>
+                    </select>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="form-group">
+                    <label for="payment-method">Payment Method*</label>
+                    <select id="payment-method" name="payment_method" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="credit_card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="cash">Cash</option>
+                    </select>
+                </div>
+
+                <!-- CAPTCHA (placeholder for now)
+                <div class="form-group">
+                    <label>Please verify that you are human*</label>
+                    <div style="border: 1px solid #ccc; padding: 0.75rem; text-align: center; border-radius: 4px; color: #666;">
+                        [CAPTCHA placeholder]
+                    </div>
+                </div> -->
+
+                <!-- Submit Button -->
+                <div class="form-footer">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
